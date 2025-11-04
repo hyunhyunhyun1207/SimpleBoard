@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header" >
+    <div class="container">
+        <a class="navbar-brand" href="/">SimpleBoard</a>
+        <div class="d-flex">
+            <th:block th:if="${session.member == null}">
+                <a href="/member/login" class="btn btn-outline-light me-2">로그인</a>
+                <a href="/member/signup" class="btn btn-warning">회원가입</a>
+            </th:block>
+            <th:block th:if="${session.member != null}">
+                <a href="/member/logout" class="btn btn-warning">로그아웃</a>
+            </th:block>
+        </div>
+    </div>
+</nav>
