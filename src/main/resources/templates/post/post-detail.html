@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/default}">
+<th:block layout:fragment="content">
+    <div class="container mt-5" style="max-width: 800px;">
+        <h2 th:text="${post.title}" class="mb-3"></h2>
+        <p class="text-muted" th:text="'작성자: ' + ${post.writer} + ' | ' + ${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}"></p>
+        <hr>
+        <div th:utext="${post.content}" class="mt-4"></div>
+        <hr>
+        <a href="/post" class="btn btn-secondary">목록으로</a>
+    </div>
+</th:block>
+</html>
