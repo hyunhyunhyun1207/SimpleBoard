@@ -21,7 +21,6 @@ public class MemberRepository {
     public Member findByEmail(String email) {
         String sql = "select * from member where email = ?";
         try {
-
             Member member = jdbcTemplate.queryForObject(sql, (rs, rowNum) ->
                     new Member(
                             rs.getLong(1),
@@ -51,7 +50,7 @@ public class MemberRepository {
                     ), nickname
             );
             return member;
-        } catch (EmptyResultDataAccessException e){
+        } catch (EmptyResultDataAccessException e) {
             return null;
         }
     }

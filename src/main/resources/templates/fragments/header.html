@@ -7,6 +7,7 @@
                 <a href="/member/signup" class="btn btn-warning">회원가입</a>
             </th:block>
             <th:block th:if="${session.member != null}">
+                <a href="/mypage" class="btn btn-outline-light me-2">마이페이지</a>
                 <a href="/member/logout" class="btn btn-warning">로그아웃</a>
             </th:block>
         </div>
